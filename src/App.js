@@ -23,7 +23,11 @@ function App(){
 
     // Define important states for the app
     [coffees, setCoffees] = useState(originalCoffees); // coffees to display
+    [name, setName] = useState(""); // name on the form input to display
+    [isArabica, setIsArabica] = useState(false); // checkbox state to display
     console.log("Coffee state: ", coffees); // just for debugging
+    console.log("Coffee name to display: ", name);
+    console.log("isArabica state to display: ", isArabica);
 
     return (
         <div id="app">
@@ -38,11 +42,19 @@ function App(){
                 {/* TODO: Form goes here to add more coffees */}
                 <form className="add-item">
                     <h4>Add more coffees!</h4>
-                    <input type="text" placeholder="Coffee type" />
+                    <input type="text" 
+                        placeholder="Coffee type" 
+                        value={name} 
+                        onChange={ (event) => {setName(event.target.value)}} />
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" 
+                            checked={isArabica} 
+                            onChange={ () => {setIsArabica(!isArabica)}} />
                         <small>arabica?</small>
                     </label>
+                    <button>
+                        Submit
+                    </button>
                 </form>
             </section>
             <section className="step" id="coffees">
