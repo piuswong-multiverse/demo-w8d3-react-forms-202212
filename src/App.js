@@ -42,7 +42,7 @@ function App(){
                 {/* TODO: Show all coffees using Coffee component*/}
                 {
                     // Whenever mapping over something, add a KEY to the component
-                    originalCoffees.map( (coffee, index) => {
+                    coffees.map( (coffee, index) => {
                         return(
                             <Coffee key={index} 
                                 coffee={coffee} 
