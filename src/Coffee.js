@@ -1,6 +1,7 @@
 import React from 'react';
 
-export function Coffee({coffee}) {
+// Traditional functions are great for components!!
+export default function Coffee({coffee}) {
 
     // display coffee data here
     return <>

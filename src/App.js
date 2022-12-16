@@ -1,4 +1,5 @@
 import React from 'react';
+import Coffee from './Coffee'; // Use {} when importing without default
 import './style.css';
 
 // Traditional functions in React can be nicer for debugging tools
@@ -35,7 +36,13 @@ function App(){
             </section>
             <section className="step" id="coffees">
                 {/* TODO: Show all coffees using Coffee component*/}
-              
+                {
+                    originalCoffees.map( (coffee) => {
+                        return(
+                            <Coffee coffee={coffee} />
+                        );
+                    })
+                }
               
             </section>
         </div>
