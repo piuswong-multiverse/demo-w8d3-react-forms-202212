@@ -36,10 +36,17 @@ function App(){
                     </small>
                 </div>
                 {/* TODO: Form goes here to add more coffees */}
-
+                <form className="add-item">
+                    <h4>Add more coffees!</h4>
+                    <input type="text" placeholder="Coffee type" />
+                    <label>
+                        <input type="checkbox" />
+                        <small>arabica?</small>
+                    </label>
+                </form>
             </section>
             <section className="step" id="coffees">
-                {/* TODO: Show all coffees using Coffee component*/}
+                {/* Show all coffees using Coffee component*/}
                 {
                     // Whenever mapping over something, add a KEY to the component
                     coffees.map( (coffee, index) => {

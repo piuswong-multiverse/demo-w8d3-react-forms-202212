@@ -50,3 +50,14 @@ button {
 .arabica::after {
     content: ' ☕️';
 }
+
+.add-item {
+  background: #F1F0CC;
+  padding: 1rem;
+  border-radius: .2rem;
+  margin: 1em 0;
+}
+
+.add-item > * {
+  margin: 1em;
+}
