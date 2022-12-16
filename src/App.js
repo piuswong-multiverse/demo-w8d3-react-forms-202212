@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Coffee from './Coffee'; // Use {} when importing without default
 import './style.css';
 
@@ -21,6 +21,10 @@ function App(){
         }
     ];
 
+    // Define important states for the app
+    [coffees, setCoffees] = useState(originalCoffees); // coffees to display
+    console.log("Coffee state: ", coffees); // just for debugging
+
     return (
         <div id="app">
             <section id="controls">
@@ -37,9 +41,12 @@ function App(){
             <section className="step" id="coffees">
                 {/* TODO: Show all coffees using Coffee component*/}
                 {
-                    originalCoffees.map( (coffee) => {
+                    // Whenever mapping over something, add a KEY to the component
+                    originalCoffees.map( (coffee, index) => {
                         return(
-                            <Coffee coffee={coffee} />
+                            <Coffee key={index} 
+                                coffee={coffee} 
+                                index={index} />
                         );
                     })
                 }
