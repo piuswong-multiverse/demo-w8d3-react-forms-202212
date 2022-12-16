@@ -29,6 +29,24 @@ function App(){
     console.log("Coffee name to display: ", name);
     console.log("isArabica state to display: ", isArabica);
 
+    const handleSubmit = (event) => {
+        event.preventDefault(); // stop form from refreshing whole page
+        // Update the coffee state!! ... by defining a whole new array
+        setCoffees([
+            ...coffees, // keep existing coffees in the array
+            {
+                name,
+                isArabica
+            }
+        ])
+
+        // THIS IS GIVING A TON OF ERRORS: 
+        // setCoffees( coffees.push({
+        //     name: name,
+        //     isArabica: isArabica
+        // }) );
+    }
+
     return (
         <div id="app">
             <section id="controls">
@@ -40,7 +58,7 @@ function App(){
                     </small>
                 </div>
                 {/* TODO: Form goes here to add more coffees */}
-                <form className="add-item">
+                <form className="add-item" onSubmit={ handleSubmit } >
                     <h4>Add more coffees!</h4>
                     <input type="text" 
                         placeholder="Coffee type" 
@@ -52,7 +70,7 @@ function App(){
                             onChange={ () => {setIsArabica(!isArabica)}} />
                         <small>arabica?</small>
                     </label>
-                    <button>
+                    <button type="submit">
                         Submit
                     </button>
                 </form>
